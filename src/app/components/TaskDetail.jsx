@@ -6,7 +6,7 @@ const TaskDetail = ({ id, comments, task, isComplete, groups }) => {
   return (
     <div>
       <div>
-        <input>{task.name}</input>
+        <input defaultValue={task.name}></input>
       </div>
       <div>
         <button onClick={() => console.log('TUKI')}>Complete / Reopen Task</button>
