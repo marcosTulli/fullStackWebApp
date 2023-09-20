@@ -12,7 +12,6 @@ const Main = () => {
       <Provider store={store}>
         <div>
           <ConnectedNavigation />
-
           <Route exact path="/dashboard" render={() => <ConnectedDashboard />} />
         </div>
       </Provider>
