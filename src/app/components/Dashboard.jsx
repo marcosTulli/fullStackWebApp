@@ -11,8 +11,8 @@ const Dashboard = ({ groups }) => {
   return (
     <div>
       <h2>DASHBOARD</h2>
-      {groups.map((g, i) => (
-        <div key={i}>
+      {groups.map((g) => (
+        <div key={g.id}>
           <ConnectedTaskList id={g.id} name={g.name} />
         </div>
       ))}
