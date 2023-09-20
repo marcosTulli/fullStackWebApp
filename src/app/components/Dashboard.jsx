@@ -7,7 +7,7 @@ const mapStatetoProps = (state) => {
     groups: state.groups,
   };
 };
-export const Dashboard = ({ groups }) => {
+const Dashboard = ({ groups }) => {
   return (
     <div>
       <h2>DASHBOARD</h2>

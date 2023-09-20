@@ -9,7 +9,7 @@ const mapStatetoProps = (state, props) => {
   };
 };
 
-export const TaskList = ({ tasks, name }) => {
+const TaskList = ({ tasks, name }) => {
   return (
     <div>
       <h3>{name} </h3>
