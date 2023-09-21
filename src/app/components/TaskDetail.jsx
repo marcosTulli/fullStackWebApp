@@ -16,7 +16,7 @@ const TaskDetail = ({
   return (
     <div>
       <div>
-        <input onChange={setTaskName} value={task.name} />
+        <input type="text" onChange={setTaskName} value={task.name} />
       </div>
       <div>
         <button onClick={() => setTaskCompletion(id, !isComplete)}>
