@@ -22,7 +22,21 @@ export const store = createStore(
               isComplete: false,
             },
           ];
+        case mutations.SET_TASK_COMPLETE:
+          return tasks.map((t) => {
+            return t.id === action.taskID ? { ...t, isComplete: action.isComplete } : t;
+          });
+
+        case mutations.SET_TASK_NAME:
+          return tasks.map((t) => {
+            return t.id === action.taskID ? { ...t, name: action.name } : t;
+          });
+        case mutations.SET_TASK_GROUP:
+          return tasks.map((t) => {
+            return t.id === action.taskID ? { ...t, group: action.groupID } : t;
+          });
       }
+
       return tasks;
     },
     comments(comments = defaultState.comments) {
