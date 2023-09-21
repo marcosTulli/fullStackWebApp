@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack",
     "dev": "webpack-dev-server",
-    "initialize": "babel-node src/server/initialize-db"
+    "server": "babel-node src/server/server",
+    "test-server": "babel-node src/server/server.spec",
+    "initialize": "babel-node src/server/initialize-db",
+    "start-dev": "concurrently \"npm run server\" \"npm run dev\""
   },
   "keywords": [],
   "author": "",
@@ -20,6 +23,7 @@
     "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.2",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "webpack": "^4.17.2",
