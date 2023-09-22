@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import { connectDB } from './connect-db';
 import './initialize-db';
+import { authRoute } from './authenticate';
 
 const port = process.env.PORT || 7777;
 const app = express();
@@ -14,6 +15,8 @@ export const addNewTask = async (task) => {
   const collection = db.collection('tasks');
   await collection.insertOne(task);
 };
+
+authRoute(app);
 
 export const updateTask = async (task) => {
   let { id, group, isComplete, name } = task;

@@ -10,8 +10,16 @@ const sagaMiddleware = createSagaMiddleware();
 
 export const store = createStore(
   combineReducers({
-    session(session = defaultState.session || {}) {
-      return session;
+    userSession(userSession = defaultState.userSession || {}, action) {
+      let { type, authenticated, session } = action;
+      switch (type) {
+        case mutations.REQUEST_AUTHENTICATE_USER:
+          return { ...userSession, atuehtnciated: mutations.AUTHENTICATING };
+        case mutations.PROCESSING_AUTHENTICATE_USER:
+          return { ...userSession, authenticated };
+        default:
+          return userSession;
+      }
     },
     tasks(tasks = defaultState.tasks, action) {
       switch (action.type) {
