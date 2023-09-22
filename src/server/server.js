@@ -2,6 +2,7 @@ require('dotenv').config();
 import express from 'express';
 import cors from 'cors';
 import { connectDB } from './connect-db';
+import './initialize-db';
 
 const port = process.env.PORT || 7777;
 const app = express();

@@ -3,6 +3,11 @@ export const CREATE_TASK = 'CREATE_TASK';
 export const SET_TASK_COMPLETE = 'SET_TASK_COMPLETE';
 export const SET_TASK_GROUP = 'SET_TASK_GORUP';
 export const SET_TASK_NAME = 'SET_TASK_NAME';
+export const REQUEST_AUTHENTICATE_USER = 'SET_AUTHENTICATE_USER';
+export const PROCESSING_AUTHENTICATE_USER = 'PROCESSING_AUTHENTICATE_USER';
+export const AUTHENTICATING = 'AUTHENTICATING';
+export const AUTHENTICATED = 'AUTHENTICATED';
+export const NOT_AUTHENTICATED = 'NOT_AUTHENTICATED';
 
 export const requestTaskCreation = (groupID) => ({
   type: REQUEST_TASK_CREATION,
@@ -31,4 +36,16 @@ export const setTaskGroup = (id, groupID) => ({
   type: SET_TASK_GROUP,
   taskID: id,
   groupID,
+});
+
+export const requestAuthenticateUser = (username, password) => ({
+  type: REQUEST_AUTHENTICATE_USER,
+  username,
+  password,
+});
+
+export const processAuthenticateUSer = (status = AUTHENTICATING, session = null) => ({
+  type: PROCESSING_AUTHENTICATE_USER,
+  session,
+  authenticated: status,
 });
