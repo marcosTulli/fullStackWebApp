@@ -14,7 +14,7 @@ const RouteGuard =
   ({ match }) => {
     console.log('Router Guard: ', match);
     if (!store.getState().session) {
-      return <Redirect to="/login" />;
+      return <Redirect to="/" />;
     } else {
       return <Component match={match} />;
     }
@@ -26,7 +26,7 @@ const Main = () => {
       <Provider store={store}>
         <div>
           <ConnectedNavigation />
-          <Route exact path="/login" component={ConnectedLogin} />
+          <Route exact path="/" component={ConnectedLogin} />
           <Route exact path="/dashboard" render={RouteGuard(ConnectedDashboard)} />
           <Route exact path="/task/:id" render={RouteGuard(ConnectedTaskDetail)} />
         </div>
