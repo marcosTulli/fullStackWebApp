@@ -1,3 +1,4 @@
+// TODO: FIX ADD NEW TASKS, EDIT TASK
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
